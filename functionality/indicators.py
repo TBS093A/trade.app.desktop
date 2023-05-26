@@ -28,7 +28,8 @@ class AbstractIndicatorChart:
                 self.dates,
                 self.data[data_set_key],
                 label = data_set_key,
-                color = self.colors[color_index]
+                color = self.colors[color_index],
+                marker = 'braille'
             )
             color_index += 1
         plotext.title(
@@ -57,7 +58,8 @@ class IndicatorRSI(
         plotext.plot(
             self.dates,
             list(self.data),
-            color = self.colors[0]
+            color = self.colors[0],
+            marker = 'braille'
         )
         plotext.title(
             self.indicator_name

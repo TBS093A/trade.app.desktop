@@ -11,9 +11,11 @@ class AbstractCandlestickChart:
 
     __indicators_class: list = [IndicatorRSI, IndicatorMACD]
 
+    __colors: list[int] = [40, 124]
+
     def __init__(
         self, 
-        date_start: str = "01/01/2020", 
+        date_start: str = "01/01/2021", 
         index : str = "goog", 
         title: str = "Google Stock Price",
         theme: str = "matrix",
@@ -25,6 +27,7 @@ class AbstractCandlestickChart:
         self.__end = plotext.today_datetime()
 
         self.__data = yfinance.download(index, self.__start, self.__end)
+        print(self.__data['Volume'])
         self.__dates = plotext.datetimes_to_string(self.__data.index)
 
     def __prepare_plot(self):
@@ -33,7 +36,9 @@ class AbstractCandlestickChart:
         )
         plotext.candlestick(
             self.__dates,
-            self.__data
+            self.__data,
+            colors = self.__colors,
+            label = 'price',
         )
         plotext.title(
             self.__title
@@ -57,6 +62,7 @@ class AbstractCandlestickChart:
             subplot_index += 1
 
             plotext.subplot(1, 1).subplot(subplot_index, 1)
+            plotext.subplot(1, 1).subplot(subplot_index, 1).plotsize(plotext.tw(), 15)
 
             indicator = indicator_class(
                 data = self.__data
