@@ -5,6 +5,10 @@ class AbstractPage:
 
     assign: str = "body"
 
+    styles: dict[str, str] = {
+        "titles": "[210 bold]"
+    }
+
     def __init__(self) -> None:
         pass
 

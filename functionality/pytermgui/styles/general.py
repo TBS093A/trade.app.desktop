@@ -4,6 +4,11 @@ config:
         styles:
             prompt: dim italic
             cursor: '@72'
+
+    Button:
+        styles:
+            label: '210'
+
     Label:
         styles:
             value: dim bold
@@ -17,4 +22,8 @@ config:
         styles:
             border: '60'
             corner: '96'
+
+    Splitter:
+        styles:
+            separator: '0'
 """
