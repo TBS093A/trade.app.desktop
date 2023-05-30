@@ -24,7 +24,8 @@ class IndexPage:
     }
 
     pages: dict = {
-		auth.AuthPage(): True,
+		# auth.AuthPage(): True,
+        tickers.TickersPage(): True,
     }
 
     def __init__(self):

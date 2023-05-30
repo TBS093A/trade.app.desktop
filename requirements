@@ -1,4 +1,5 @@
 plotext==5.2.8
 yfinance==0.2.18 
 pandas-ta==0.3.14b
-pytermgui==7.4.0  
+pytermgui==7.4.0 
+requests==2.31.0  

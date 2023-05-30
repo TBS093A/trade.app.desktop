@@ -15,19 +15,14 @@ class AbstractCandlestickChart:
 
     def __init__(
         self, 
-        date_start: str = "01/01/2021", 
-        index : str = "goog", 
-        title: str = "Google Stock Price",
+        data_frame,
+        title: str = "unknown",
         theme: str = "matrix",
     ):
         self.__title = title
         self.__theme = theme
 
-        self.__start = plotext.string_to_datetime(date_start)
-        self.__end = plotext.today_datetime()
-
-        self.__data = yfinance.download(index, self.__start, self.__end)
-        print(self.__data['Volume'])
+        self.__data = data_frame
         self.__dates = plotext.datetimes_to_string(self.__data.index)
 
     def __prepare_plot(self):
@@ -38,7 +33,7 @@ class AbstractCandlestickChart:
             self.__dates,
             self.__data,
             colors = self.__colors,
-            label = 'price',
+            label = f'{ self.title } price',
         )
         plotext.title(
             self.__title
