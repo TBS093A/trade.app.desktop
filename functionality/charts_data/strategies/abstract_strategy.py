@@ -1,6 +1,8 @@
 from datetime import date, timedelta 
 from enum import Enum
 
+from pandas import DataFrame
+
 
 class Period(Enum):
 
@@ -24,7 +26,7 @@ class Period(Enum):
     MAX = None
 
 
-class AbstractStrategy:
+class AbstractOrdinaryStockExchangeStrategy:
 
     def __init__(self, period: Period) -> None:
         
@@ -45,9 +47,20 @@ class AbstractStrategy:
     def get_index_list(self) -> list[str]:
         return
 
-    def download(self, index: str) -> None:
+    def get_index_info(self, index: str) -> dict:
         return
 
-            
-            
+    def get_index_news(self, index: str) -> dict:
+        return
 
+    def get_index_stock_exchange_chart(self, index: str) -> DataFrame:
+        return
+
+    def get_index_actions_info(self, index: str) -> dict[str, DataFrame]:
+        return
+
+    def get_index_holders_info(self, index: str) -> dict[str, DataFrame]:
+        return
+
+    def get_index_earnings_info(self, index: str) -> dict[str, DataFrame]:
+        return

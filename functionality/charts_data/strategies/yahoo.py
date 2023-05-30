@@ -28,8 +28,12 @@ class YahooStrategy(
             "AAPL",
         ]
 
-    def get_index_info(self, index: str):
+    def get_index_info(self, index: str) -> dict:
         return yfinance.Ticker(index).info
+
+    def get_index_news(self, index) -> dict:
+        ticker = yfinance.Ticker(index)
+        return ticker.news
 
     def get_index_stock_exchange_chart(self, index) -> DataFrame:
         return yfinance.download(
