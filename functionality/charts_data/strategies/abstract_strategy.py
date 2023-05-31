@@ -34,8 +34,7 @@ class AbstractOrdinaryStockExchangeStrategy:
             period = period
         )
 
-        if end == None:
-            self.end = f"{ date.today() }"
+        self.end = f"{ date.today() }"
 
     def __calculate_start_date(self, period: Period) -> str:
         if period == Period.YTD:
