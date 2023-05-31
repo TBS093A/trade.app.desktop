@@ -55,6 +55,7 @@ class IndexPage:
                         ),
                         assign = page.get_assign()
                     )
+                    page.update()
 
     def ____define_layout(self) -> ptg.Layout:
         layout = ptg.Layout()

@@ -6,24 +6,24 @@ from pandas import DataFrame
 
 class Period(Enum):
 
-    1D = 1
-    5D = 5
+    ONE_D           = 1
+    FIVE_D          = 5
     
-    1W = 7
-    2W = 7 * 2
-    3W = 7 * 3
+    ONE_W           = 7
+    TWO_W           = 7 * 2
+    THREE_W         = 7 * 3
     
-    1M = 30
-    2M = 30 * 2
-    3M = 30 * 3
+    ONE_M           = 30
+    TWO_M           = 30 * 2
+    THREE_M         = 30 * 3
 
-    YTD = None
+    YTD             = None
 
-    1Y = 365
-    2Y = 365 * 2
-    3Y = 365 * 3
+    ONE_Y           = 365
+    TWO_Y           = 365 * 2
+    THREE_Y         = 365 * 3
 
-    MAX = None
+    MAX             = None
 
 
 class AbstractOrdinaryStockExchangeStrategy:

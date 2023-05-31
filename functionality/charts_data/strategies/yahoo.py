@@ -3,12 +3,12 @@ import yfinance
 from pandas import DataFrame
 
 from .abstract_strategy import (
-    AbstractStrategy
+    AbstractOrdinaryStockExchangeStrategy
 )
 
 
 class YahooStrategy(
-    AbstractStrategy
+    AbstractOrdinaryStockExchangeStrategy
 ):
 
     def get_index_list(self) -> list[str]:
@@ -48,7 +48,7 @@ class YahooStrategy(
             "actions": ticker.actions,
             "dividends": ticker.dividends,
             "splits": ticker.splits,
-            "capital_gains" ticker.capital_gains,
+            "capital_gains": ticker.capital_gains,
         }
 
     def get_index_holders_info(self, index: str) -> dict[str, DataFrame]:

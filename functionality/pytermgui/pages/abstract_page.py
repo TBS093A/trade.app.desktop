@@ -18,3 +18,11 @@ class AbstractPage:
     def get_assign(self) -> str:
         return self.assign
 
+    async def update(self) -> None:
+        """
+            method for refreshing content of widgets like labels and etc.
+            
+            ! - invoke this method after manager.add(<widget>) execution.
+        """
+        pass
+
